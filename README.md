@@ -1,60 +1,38 @@
-# Try Out Development Containers: Rust
+# Try Out Rust & WebAssembly
 
-This is a sample project that lets you try out the **[VS Code Remote - Containers](https://aka.ms/vscode-remote/containers)** extension in a few easy steps.
-
-> **Note:** If you're following the quick start, you can jump to the [Things to try](#things-to-try) section. 
+This is a repo that lets you try out Rust and WebAssembly in
+[VisualStudio Code](https://code.visualstudio.com/). This requires the
+[VS Code Remote - Containers](https://aka.ms/vscode-remote/containers)
+extension to work.
 
 ## Setting up the development container
 
-Follow these steps to open this sample in a container:
-
-1. If this is your first time using a development container, please follow the [getting started steps](https://aka.ms/vscode-remote/containers/getting-started).
-
-2. To use this repository, you can either open the repository in an isolated Docker volume:
-
-    - Press <kbd>F1</kbd> and select the **Remote-Containers: Try a Sample...** command.
-    - Choose the "Rust" sample, wait for the container to start and try things out!
-        > **Note:** Under the hood, this will use **Remote-Containers: Open Repository in Container...** command to clone the source code in a Docker volume instead of the local filesystem.
-
-   Or open a locally cloned copy of the code:
-
-   - Clone this repository to your local filesystem.
-   - Press <kbd>F1</kbd> and select the **Remote-Containers: Open Folder in Container...** command.
-   - Select the cloned copy of this folder, wait for the container to start, and try things out!
+Open the root directory of this repository in VS Code. It should ask you if you
+want to open the repo in a remote container. Choose yes.
 
 ## Things to try
 
 Once you have this sample opened in a container, you'll be able to work with it like you would locally.
 
-> **Note:** This container runs as a non-root user with sudo access by default. Comment out `"remoteUser": "vscode"` in `.devcontainer/devcontainer.json` if you'd prefer to run as root.
-
 Some things to try:
 
 1. **Edit:**
-   - Open `main.rs`
+   - Open `src/lib.rs`
    - Try adding some code and check out the language features.
-1. **Terminal:** Press <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>\`</kbd> and type `uname` and other Linux commands from the terminal window.
-1. **Build, Run, and Debug:**
-   - Open `main.rs`
-   - Add a breakpoint (e.g. on line 8).
-   - Press <kbd>F5</kbd> to launch the app in the container.
-   - Once the breakpoint is hit, try hovering over variables, examining locals, and more.
+1. **Terminal:** Press <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>\`</kbd> and type
+  `uname` and other Linux commands from the terminal window.
+1. **Build and Run:**
+   - Open a terminal and type `wasm-pack build -t web`
+   - Once the project is compiled, run `simple-http-server` and open
+     [http://localhost:8000/index.html](http://localhost:8000/index.html) in
+     your browser.
  
-## Contributing
-
-This project welcomes contributions and suggestions. Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
-
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
 ## License
+
+The project is based off of the
+[Try Out Development Containers: Rust](https://github.com/microsoft/vscode-remote-try-rust)
+created by Microsoft. The container configuration was adjusted to include
+libraries and tools for the WebAssembly development with Rust.
 
 Copyright © Microsoft Corporation All rights reserved.<br />
 Licensed under the MIT License. See LICENSE in the project root for license information.
