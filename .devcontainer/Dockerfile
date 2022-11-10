@@ -5,12 +5,10 @@ USER vscode
 
 RUN rustup target add wasm32-unknown-unknown
 
-ADD wasm-pack /usr/local/cargo/bin/wasm-pack
-
 RUN cargo install \
     wasm-bindgen-cli \
-    wasmtime-cli \
-    simple-http-server
+    simple-http-server \
+    wasm-pack
 
 USER root
 
